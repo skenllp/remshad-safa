@@ -1,0 +1,233 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Premium Islamic Wedding Invitation
+   Scroll-reveal, shimmer, hover effects, countdowns, micro-interactions
+   ========================================================================== */
+
+/* ===== SCROLL REVEAL (custom AOS-like) ===== */
+[data-aos] {
+  transition:
+    opacity  0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter   0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-aos="fade-up"]    { opacity: 0; transform: translateY(40px); }
+[data-aos="fade-down"]  { opacity: 0; transform: translateY(-40px); }
+[data-aos="fade-left"]  { opacity: 0; transform: translateX(40px); }
+[data-aos="fade-right"] { opacity: 0; transform: translateX(-40px); }
+[data-aos="fade-in"]    { opacity: 0; }
+[data-aos="scale-in"]   { opacity: 0; transform: scale(0.86); }
+[data-aos="blur-reveal"] {
+  opacity: 0; filter: blur(10px); transform: translateY(18px) scale(0.97);
+  transition:
+    opacity  1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter   1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+[data-aos="zoom-reveal"] {
+  opacity: 0; transform: scale(1.1);
+  transition:
+    opacity  1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Animated state */
+[data-aos="fade-up"].aos-animate,
+[data-aos="fade-down"].aos-animate,
+[data-aos="fade-left"].aos-animate,
+[data-aos="fade-right"].aos-animate,
+[data-aos="fade-in"].aos-animate    { opacity: 1; transform: none; }
+[data-aos="scale-in"].aos-animate   { opacity: 1; transform: scale(1); }
+[data-aos="blur-reveal"].aos-animate { opacity: 1; filter: blur(0); transform: none; }
+[data-aos="zoom-reveal"].aos-animate { opacity: 1; transform: scale(1); }
+
+/* ===== AOS DELAY UTILITIES ===== */
+[data-aos-delay="50"]  { transition-delay:  50ms; }
+[data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos-delay="150"] { transition-delay: 150ms; }
+[data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos-delay="250"] { transition-delay: 250ms; }
+[data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos-delay="350"] { transition-delay: 350ms; }
+[data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos-delay="500"] { transition-delay: 500ms; }
+[data-aos-delay="600"] { transition-delay: 600ms; }
+
+/* ===== SHIMMER TEXT (nav logo) ===== */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--gold-500) 0%,
+    var(--gold-200) 28%,
+    var(--gold-300) 50%,
+    var(--gold-200) 72%,
+    var(--gold-500) 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 3.5s linear infinite;
+}
+@keyframes shimmerText { to { background-position: 220% center; } }
+
+/* ===== HOVER LIFT ===== */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(10,46,26,0.16);
+}
+
+/* ===== FLOAT ANIMATIONS ===== */
+.float-1 { animation: floatY 6s ease-in-out infinite; }
+.float-2 { animation: floatY 7.5s ease-in-out 1.2s infinite; }
+.float-3 { animation: floatY 9s ease-in-out 2.5s infinite; }
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+/* ===== GOLD GLOW PULSE ===== */
+.glow-gold {
+  animation: glowGold 2.8s ease-in-out infinite;
+}
+@keyframes glowGold {
+  0%,100% { box-shadow: 0 0 16px rgba(212,168,67,0.25); }
+  50%      { box-shadow: 0 0 36px rgba(212,168,67,0.55); }
+}
+
+/* ===== EMERALD GLOW PULSE ===== */
+.glow-emerald {
+  animation: glowEmerald 2.8s ease-in-out infinite;
+}
+@keyframes glowEmerald {
+  0%,100% { box-shadow: 0 0 16px rgba(22,87,51,0.2); }
+  50%      { box-shadow: 0 0 36px rgba(22,87,51,0.45); }
+}
+
+/* ===== COUNTDOWN FLIP ===== */
+.countdown__number.flip {
+  animation: countFlip 0.32s ease;
+}
+@keyframes countFlip {
+  0%   { transform: translateY(0);    opacity: 1; }
+  45%  { transform: translateY(-10px); opacity: 0; }
+  55%  { transform: translateY(10px);  opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+/* ===== ORNAMENT GENTLE SPIN ===== */
+.ornament-spin {
+  display: inline-block;
+  animation: gentleSpin 22s linear infinite;
+}
+@keyframes gentleSpin { to { transform: rotate(360deg); } }
+
+/* ===== HERO ARCH DRAW ===== */
+@keyframes archDraw {
+  from { stroke-dashoffset: 1200; opacity: 0; }
+  to   { stroke-dashoffset: 0;    opacity: 1; }
+}
+.hero__arch-svg path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  opacity: 0;
+}
+.hero-revealed .hero__arch-svg path {
+  animation: archDraw 2.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+.hero-revealed .hero__arch-svg path:nth-child(1) { animation-delay: 0.6s; }
+.hero-revealed .hero__arch-svg path:nth-child(2) { animation-delay: 0.9s; }
+
+/* ===== ORNAMENT DIVIDER GROW ===== */
+.ornament-divider.aos-animate .ornament-line {
+  animation: lineGrow 0.8s var(--ease-out-soft) 0.1s both;
+}
+.ornament-divider.aos-animate .ornament-gem {
+  animation: gemPop 0.5s var(--ease-out-soft) 0.4s both;
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+@keyframes gemPop {
+  0%   { transform: scale(0) rotate(-45deg); opacity: 0; }
+  70%  { transform: scale(1.25) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* ===== SECTION BG PARALLAX HINT ===== */
+.section-bismillah .bismillah__pattern,
+.section-rsvp .rsvp__pattern {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* ===== CARD ENTRANCE STAGGER ===== */
+.couple__cards .couple-card:nth-child(1) { transition-delay: 0ms; }
+.couple__cards .couple-card:nth-child(2) { transition-delay: 120ms; }
+.events__grid .event-card:nth-child(1) { transition-delay: 80ms; }
+.events__grid .event-card:nth-child(2) { transition-delay: 200ms; }
+.venue__grid .venue-card:nth-child(1) { transition-delay: 80ms; }
+.venue__grid .venue-card:nth-child(2) { transition-delay: 200ms; }
+
+/* ===== RSVP BUTTON RIPPLE ===== */
+.rsvp__btn {
+  position: relative; overflow: hidden;
+}
+.rsvp__btn::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s var(--ease-standard);
+}
+.rsvp__btn:hover::after { transform: scaleX(1); }
+
+/* ===== BISMILLAH VERSE FADE-IN ===== */
+.bismillah__verse {
+  transition: box-shadow 0.4s ease;
+}
+.bismillah__verse:hover {
+  box-shadow: 0 8px 36px rgba(22,87,51,0.10), 0 0 0 1px rgba(22,87,51,0.08);
+}
+
+/* ===== GATE CORNER HOVER EXPAND ===== */
+#gate .gate-content:hover .gate-corner {
+  opacity: 1;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  width: 56px; height: 56px;
+}
+
+/* ===== MUSIC TOGGLE SPIN ===== */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .float-1, .float-2, .float-3,
+  .ornament-spin,
+  .glow-gold, .glow-emerald,
+  .hero__arch-svg path { animation: none !important; }
+  .shimmer-gold {
+    animation: none;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: var(--gold-500);
+  }
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
