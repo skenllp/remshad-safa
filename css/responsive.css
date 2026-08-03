@@ -1,0 +1,270 @@
+/* ==========================================================================
+   RESPONSIVE.CSS — Premium Islamic Wedding Invitation
+   Breakpoints: 1100 · 900 · 720 · 560 · 420 · 360
+   ========================================================================== */
+
+/* ===== 1100px — large tablet / small desktop ===== */
+@media (max-width: 1100px) {
+  .couple__cards {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .events__grid {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .venue__grid {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===== 900px — tablet ===== */
+@media (max-width: 900px) {
+  /* Couple cards: stack vertically */
+  .couple__cards {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  /* Events: stack vertically */
+  .events__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  /* Venue: stack vertically */
+  .venue__grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  /* Countdown: 2×2 grid */
+  .countdown__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* RSVP form row: stack */
+  .rsvp__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero arch — scale down */
+  .hero__arch {
+    width: min(100%, 560px);
+  }
+
+  /* Bismillah verse padding */
+  .bismillah__verse {
+    padding: 28px 28px;
+  }
+}
+
+/* ===== 720px — large mobile / small tablet ===== */
+@media (max-width: 720px) {
+  /* Top nav padding */
+  .top-nav { padding: 16px 20px; }
+  .top-nav.scrolled { padding: 11px 20px; }
+
+  /* Hero names: slightly tighter */
+  .hero__name {
+    font-size: clamp(1.9rem, 7.5vw, 3rem);
+  }
+
+  /* Couple photo slightly smaller */
+  .couple__photo-frame {
+    width: min(78vw, 320px);
+  }
+
+  /* Event card padding */
+  .event-card {
+    padding: 40px 28px;
+  }
+
+  /* Venue map height */
+  .venue-card__map {
+    height: 210px;
+  }
+
+  /* Side nav: hide below 768px already handled in style.css */
+}
+
+/* ===== 560px — mobile ===== */
+@media (max-width: 560px) {
+  /* Section padding */
+  .section-bismillah,
+  .section-couple,
+  .section-events,
+  .section-countdown,
+  .section-venue,
+  .section-rsvp,
+  .section-thankyou {
+    padding: 72px 18px;
+  }
+
+  /* Ornament lines shorter */
+  .ornament-line { width: 52px; }
+
+  /* Hero */
+  .hero__stage { padding: 0 18px; gap: 10px; }
+  .hero__name  { font-size: clamp(1.7rem, 8vw, 2.8rem); }
+  .hero__amp   { font-size: clamp(1.1rem, 5vw, 1.6rem); }
+  .hero__date  { font-size: clamp(0.85rem, 3.5vw, 1.1rem); letter-spacing: 0.2em; }
+  .hero__tagline { font-size: 0.62rem; letter-spacing: 0.38em; }
+  .hero__venue { font-size: 0.72rem; }
+  .hero__arch  { display: none; } /* hide arch decoration at small sizes */
+
+  /* Gate */
+  .gate-names  { font-size: clamp(2.4rem, 10vw, 4rem); }
+  .gate-bismillah { font-size: clamp(1.3rem, 5.5vw, 2rem); }
+  .gate-corner { width: 36px; height: 36px; }
+  .gate-corner.tl { top: 18px; left: 18px; }
+  .gate-corner.tr { top: 18px; right: 18px; }
+  .gate-corner.bl { bottom: 18px; left: 18px; }
+  .gate-corner.br { bottom: 18px; right: 18px; }
+
+  /* Bismillah section */
+  .bismillah__verse { padding: 24px 20px; }
+  .bismillah__verse::before { font-size: 4rem; top: 6px; left: 12px; }
+  .verse-arabic { font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+
+  /* Couple */
+  .couple__photo-frame { width: min(80vw, 280px); }
+  .couple-card { padding: 32px 22px; }
+  .couple-card__name { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+
+  /* Events */
+  .event-card { padding: 36px 22px; }
+  .event-card__title { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+  .event-detail__value { font-size: 0.88rem; }
+
+  /* Countdown */
+  .countdown__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .countdown__box { padding: 28px 12px; }
+  .countdown__number { font-size: clamp(2.4rem, 10vw, 3.6rem); }
+  .countdown__label  { font-size: 0.55rem; letter-spacing: 0.28em; }
+
+  /* Venue */
+  .venue-card__header { padding: 20px 20px 16px; }
+  .venue-card__address { padding: 14px 20px 0; }
+  .venue-card .maps-btn { margin: 12px 20px 24px; width: calc(100% - 40px); }
+  .venue-card__map { height: 190px; }
+
+  /* RSVP */
+  .rsvp__input { padding: 12px 14px; font-size: 0.9rem; }
+  .rsvp__btn   { padding: 14px 20px; font-size: 0.68rem; }
+  .rsvp__radio-group { gap: 10px; }
+
+  /* Footer */
+  .site-footer { padding: 64px 18px 36px; }
+  .footer__name-script { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .footer__links { gap: 12px; }
+  .maps-btn--footer { font-size: 0.6rem; padding: 11px 20px; }
+
+  /* Music toggle */
+  .music-toggle { bottom: 20px; right: 18px; width: 46px; height: 46px; }
+}
+
+/* ===== 420px — small mobile ===== */
+@media (max-width: 420px) {
+  .section-bismillah,
+  .section-couple,
+  .section-events,
+  .section-countdown,
+  .section-venue,
+  .section-rsvp,
+  .section-thankyou {
+    padding: 60px 16px;
+  }
+
+  .hero__stage { padding: 0 14px; }
+  .hero__name  { font-size: clamp(1.5rem, 8.5vw, 2.4rem); }
+  .hero__date  { font-size: clamp(0.78rem, 3.8vw, 1rem); letter-spacing: 0.15em; }
+
+  .gate-names { font-size: clamp(2.1rem, 11vw, 3.2rem); }
+
+  /* Section titles */
+  .section-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+
+  /* Cards full-width */
+  .couple__cards,
+  .events__grid,
+  .venue__grid {
+    max-width: 100%;
+  }
+
+  .couple-card { padding: 28px 18px; }
+  .event-card  { padding: 32px 18px; }
+
+  /* Countdown tighter */
+  .countdown__box { padding: 22px 10px; border-radius: 14px; }
+  .countdown__number { font-size: clamp(2rem, 10vw, 3rem); }
+
+  /* Rsvp */
+  .rsvp__form-row { grid-template-columns: 1fr; }
+  .rsvp__radio-box { width: 34px; height: 34px; border-radius: 8px; }
+
+  /* Bismillah verse */
+  .bismillah__arabic { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+
+  /* Footer */
+  .footer__links { flex-direction: column; align-items: center; }
+  .maps-btn--footer { width: 100%; max-width: 260px; justify-content: center; }
+}
+
+/* ===== 360px — extra-small ===== */
+@media (max-width: 360px) {
+  .hero__name  { font-size: clamp(1.35rem, 9vw, 2rem); }
+  .hero__date  { font-size: 0.75rem; letter-spacing: 0.12em; gap: 6px; }
+
+  .gate-names  { font-size: clamp(1.9rem, 12vw, 2.8rem); }
+  .gate-bismillah { font-size: clamp(1.1rem, 6vw, 1.6rem); margin-bottom: 16px; }
+
+  .countdown__grid { gap: 8px; }
+  .countdown__number { font-size: clamp(1.8rem, 10.5vw, 2.6rem); }
+
+  .section-title { font-size: clamp(1.5rem, 7.5vw, 2rem); }
+  .couple-card__name { font-size: clamp(1rem, 5.5vw, 1.4rem); }
+  .event-card__title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+
+  .ornament-line { width: 36px; }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: 100svh; }
+  .hero__stage { gap: 6px; padding: 0 16px; }
+  .hero__name  { font-size: clamp(1.4rem, 4.5vw, 2rem); }
+  .hero__amp   { font-size: clamp(1rem, 3vw, 1.4rem); }
+  .hero__date  { font-size: 0.8rem; }
+  .hero__eyebrow, .hero__tagline, .hero__venue { display: none; }
+
+  #gate .gate-date { margin-bottom: 28px; }
+  #gate .gate-names { font-size: clamp(2rem, 8vw, 3.5rem); }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  #gate, .music-toggle, .side-nav, .top-nav, .scroll-cue,
+  .grain-overlay, .hero__particles, .hero__arch {
+    display: none !important;
+  }
+  body { background: #fff; color: #000; }
+  .section-couple, .section-countdown, .section-thankyou,
+  .section-bismillah { background: #fff !important; color: #000 !important; }
+  .couple-card, .event-card { border: 1px solid #ccc !important; background: #fff !important; }
+  .couple-card__name, .event-card__title,
+  .section-title, .hero__name { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+}
